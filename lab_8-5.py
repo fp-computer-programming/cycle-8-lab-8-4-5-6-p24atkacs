@@ -26,21 +26,25 @@ A palindrome is a word that is spelled the same forwards and backwards.
 """
 # Author: Andrew Tkacs
 
-# Function to check if a given word is a palindrome
-def is_palindrome(word):
+# Function to calculate the factorial of a given number
+def factorial(num):
     """
-    Check if the given word is a palindrome.
+    Calculate the factorial of the given number.
     
-    Returns: - bool: True if the word is a palindrome, False otherwise
+    Returns:
+    - int: The factorial of the number
     """
-    # Convert the word to lowercase to make the comparison case-insensitive,
-    word_lower = word.lower()
+    # Initialize the result to 1
+    result = 1
     
-    # Compare the original word with its reverse
-    return word_lower == word_lower[::-1]
+    # Multiply numbers from 1 to num
+    for i in range(1, num + 1):
+        result *= i
+    
+    # Return the final result
+    return result
 
-word_example = "radar"
-result = is_palindrome(word_example)
-print(f"The word '{word_example}' is a palindrome: {result}.")
-
+num_example = 5
+result = factorial(num_example)
+print(f"The factorial of {num_example} is {result}.")
 

@@ -24,23 +24,29 @@ A palindrome is a word that is spelled the same forwards and backwards.
 
 
 """
+
 # Author: Andrew Tkacs
 
-# Function to check if a given word is a palindrome
-def is_palindrome(word):
+# Function to count the number of As in a given word
+def count_a(word):
     """
-    Check if the given word is a palindrome.
+    Count the number of 'a's in the given word.
     
-    Returns: - bool: True if the word is a palindrome, False otherwise
+    Returns:
+    - int: The count of 'a's (both lowercase and uppercase) in the word
     """
-    # Convert the word to lowercase to make the comparison case-insensitive,
-    word_lower = word.lower()
+    # Initialize a variable to store the count
+    a_count = 0
     
-    # Compare the original word with its reverse
-    return word_lower == word_lower[::-1]
+    # Iterate through each character in the word
+    for char in word:
+        # Check if the character is 'a' or 'A' and increment the count
+        if char == 'a' or char == 'A':
+            a_count += 1
+    
+    # Return the final count
+    return a_count
 
-word_example = "radar"
-result = is_palindrome(word_example)
-print(f"The word '{word_example}' is a palindrome: {result}.")
-
-
+word_example = "Abracadabra"
+result = count_a(word_example)
+print(f"The word '{word_example}' has {result} 'a's.")
